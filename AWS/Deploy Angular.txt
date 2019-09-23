@@ -1,0 +1,72 @@
+﻿https://gist.github.com/tusharbabbar/d8fc8d3448db6085bae6
+
+1. Ingresar a la maquina ec2.
+
+2. tener instalado:
+
+* instalado node js y el gestor de paquetes npm:
+	- validar si lo tiene instalado y que version: 
+		npm -v
+
+	- Instalarlo si no lo tiene:
+	sudo apt-get install npm
+	curl -sL https://deb.nodesource.com/setup | sudo bash
+	sudo apt-get install -y nodejs
+
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install build-essential
+sudo apt-get install nodejs-legacy
+
+
+	sudo apt-get install -y nodejs
+	sudo npm install -g node-gyp
+	sudo npm install -g @angular/cli
+
+
+* Installing yoeman, grunt and bower
+npm install -g yo
+npm install -g generator-angular
+npm install -g bower grunt (-g signifies global scope)
+
+
+
+
+* instalado angular cli:
+	npm install -g @angular/cli
+	npm install -g angular-cli
+
+
+
+
+2. ejecutar los siguientes comandos:
+npm install
+ng build --prod
+en la carpeta dist cambiar en <base href="/">  a <base href="/scb/"> 
+
+sudo su
+cd /home
+git clone https://github.com/artsoftecos/SCB-FRONT.git
+cd SCB-FRONT
+git pull
+git checkout master
+cp -avr /home/SCB-FRONT/dist /opt/tomcat/webapps
+cd  /opt/tomcat/webapps
+mv dist scb
+
+Reset folder scb
+rm -r scb
+
+
+cp -avr /home/SCB-BACK/target/SCB-Back-1.war /opt/tomcat/webapps
+
+mvn clean install
+cp -avr /home/SCB-BACK/target/SCB-Back-1.war /opt/tomcat/webapps
+cd /opt/tomcat/webapps
+
+
+
+
+	sudo apt-get update
+	sudo apt-get install nodejs
+	sudo apt-get install npm
